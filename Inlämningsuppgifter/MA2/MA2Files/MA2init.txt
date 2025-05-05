@@ -1,0 +1,77 @@
+
+-7*(-3-(5+8)) #112
+1 + 2 + 3 = x # Variables. Assignment to the RIGHT!
+x/2 + x #9
+1+2+3=x=y
+ans*3=y # 18
+1+2+3=2 #Syntax error, excpected name
+1+2 # 3
+ans 
+2*ans + 5 # 11
+p
+1+2
+ans*p
+vars
+log(2)
+log(-3)
+log(3
+log 2)
+cos(PI)
+sum(1,2,3)
+max(1,2)
+sum 1,2,3)
+sum(12,)
+1+*2
+sin 2 
+((1)++)
+1=2
+*1 
+max(1,2 3)
+# PROBLEM CASE
+1=x+2 #Fails, and I dont know why, detects 1=x and does that but then nothing happens with +2
+
+2+3 4
+vars
+1+2+3=
+
+#PROBLEM CASES
+sin(PI)+1 #1
+sin(PI)
+log(E) #1
+(sin(2)=x)*x + (cos(2)=y)*y #1
+sum(1) #1
+cos(1.57079632679) 
+cos(PI/2) #Gives answer for cos(PI)/2, and now its fixed, used factor instead of assignment
+2=x+2
+fac(1.5) #Gets evaluation error
+
+1+2*3+4          # Should work from start
+5-1+3-1/2        # Will not work until you have fixed the expression function
+
+# Add your own tests here
+
+
+
+# Remove the comment character to try the following
+
+1 - (5-2*2)/(1+1) - (-2 + 1)      # 
+sin(3.14159265)                   # Standard functions
+cos(PI)                           # Predefined constant
+log(exp(4*0.5 - 1))               # Standard functions
+1 + 2 + 3 = x                     # Variables. Assignment to the RIGHT!
+x/2 + x
+(1=x) + sin(2=y)                  # Assignments
+vars                              # Prints variable values
+1+2
+2*ans + 5                         # Result from last top level expression
+ans
+1 + z                             # Undefined variable
+sum(1,6,2,4,9,8)            
+1 + max(sin(x+y), cos(1), log(0.5))
+fac(ans-1)                        # Factorial.  Note integer!
+fac(2.5)                          # Illegal argument
+fac(40)                           # Big number
+2 ++ 4*ans/0                      # Syntax error before evaluation error
+ans/0 + * x                       # Evaluation before syntax error
+
+# Write tests interactively now!
