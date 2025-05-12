@@ -76,12 +76,15 @@ class BST:
 #
 #   Methods to be completed
 #
+
+    #Recursive method to find given number k
     def contains_recursive(self, k):
 
         def _contain_recursive(r, k):
             if r is None:
-                return False
+                return False #Base case
             
+            #The 3 cases we can have
             if r.key == k:
                 return True
             
@@ -93,8 +96,19 @@ class BST:
 
         return _contain_recursive(self.root, k)
 
-    def height(self):                 #            
-        pass
+    def height(self):
+
+        def _height(r):
+            if r is None:
+                return 0 #basecase
+            
+            #Recursive
+            L_subTree = _height(r.left)
+            R_subTree = _height(r.right)
+
+            return 1 + max(L_subTree,R_subTree)
+        
+        return _height(self.root)
 
     def remove(self, key): #
         self.root = self._remove(self.root, key)
@@ -103,31 +117,50 @@ class BST:
         if r is None:
             return None
         elif k < r.key:
-            pass
-            # r.left = left subtree with k removed
+            return self._remove(r.left, k)
         elif k > r.key:
-            pass
-            # r.right =  right subtree with k removed
+            return self._remove(r.right, k)
+        
         else:  # This is the key to be removed
             if r.left is None:     # Easy case
                 return r.right
             elif r.right is None:  # Also easy case
                 return r.left
             else:  # This is the tricky case.
-                pass
+                mini = self._min(r.right)
+                r.key = mini.key
+                r.right = self._remove(r.right, mini.key)
                 # Find the smallest key in the right subtree
                 # Put that key in this node
                 # Remove that key from the right subtree
         return r  # Remember this! It applies to some of the cases above
+    
+    def _min(self, node):
+        current = node
+        while current.left is not None:
+            current = current.left
 
-    def __str__(self):                #            
-        pass
+        return current
+    
+    def __str__(self):   
+        s = "<"          
+        for x in self:
+            s += str(x) + ", "
 
-    def to_list(self):                      #      
-        pass
+        if len(s) > 2:
+            s = s[0:-2]
+        return s + ">"
+
+    def to_list(self): # Complexity: O(n)     
+        return [x for x in self]
 
     def to_LinkedList(self):                 #     
-        pass
+        lst = LinkedList()
+
+        for x in self:
+            lst.insert(x)
+
+        return lst
 
 
 def random_tree(n):                               # Useful
@@ -145,6 +178,10 @@ def main():
     for k in [0, 1, 2, 5, 9]:
         print(f"contains({k}): {t.contains(k)}")
 
+    print(t.height())
+    print(t)
+    print(t.to_list())
+
 
 if __name__ == "__main__":
     main()
@@ -154,11 +191,11 @@ if __name__ == "__main__":
 What is the generator good for?
 ==============================
 
-1. computing size?
-2. computing height?
-3. contains?
-4. insert?
-5. remove?
+1. computing size? Yes
+2. computing height? No
+3. contains? Yes
+4. insert? No
+5. remove? Yes
 
 """
 
