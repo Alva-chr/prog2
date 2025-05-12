@@ -29,7 +29,7 @@ def sphere_volume(n, d, R=1):
 
     return V
 
-def hypersphere_exact(d,r=1):
+def hypersphere_exact(n,d,r=1):
     return (pi**(d/2))/(gamma(d/2+1))*(r**d)
      
 def main():
