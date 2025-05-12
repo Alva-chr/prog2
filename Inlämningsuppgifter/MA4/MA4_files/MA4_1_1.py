@@ -19,7 +19,6 @@ def approximate_pi(n):
     
     x_s = []
     y_s = []
-    n_s = 0
 
     for i in range(n):
         x = r.uniform(-1,1)
@@ -35,7 +34,7 @@ def approximate_pi(n):
         else:
             x_s.append(x)
             y_s.append(y)
-            n_s +=1
+
     plt.figure(figsize=(10,10))
     plt.scatter(x_c, y_c, color = "red")
     plt.scatter(x_s,y_s, color="blue")
@@ -44,7 +43,7 @@ def approximate_pi(n):
     print(f"Number of points in circle: {n_c}")
     print(f"Pi is approx: {4*n_c/(n)}" )
     print(f"Pi is given as: {pi}")
-    return 4/(n)
+    return 4*n_c/(n)
     
 def main():
     dots = [1000, 10000, 100000]
