@@ -25,7 +25,7 @@ class Test(unittest.TestCase):
         seq = stop - start
 
         start = pc()
-        app_vol = sphere_volume_parallel1(n, d, np)
+        app_vol = sphere_volume_parallel1(n, d, R=1)
         print(app_vol)
         stop = pc()
         par = stop - start
@@ -44,7 +44,7 @@ class Test(unittest.TestCase):
         seq = stop - start
 
         start = pc()
-        app_vol = sphere_volume_parallel2(n, d, np)
+        app_vol = sphere_volume_parallel2(n, d, R=1)
         print(app_vol)
         stop = pc()
         par = stop - start
