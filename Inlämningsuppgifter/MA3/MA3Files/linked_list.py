@@ -1,9 +1,9 @@
 """ linked_list.py
 
-Student:
-Mail:
-Reviewed by:
-Date reviewed:
+Student: Alva Christensson
+Mail: Alvachristensson03@gmail.com
+Reviewed by: Yashaswi Sood
+Date reviewed: 2025-05-19
 """
 
 
@@ -106,9 +106,6 @@ class LinkedList:
         _to_list(self.first)
         return l
         
-
-            
-
     def remove(self, x):  
         f = self.first  
 
@@ -168,21 +165,25 @@ class LinkedList:
 
     def copy(self):   
         result = LinkedList()
-        result.first = result.Node(self.first.data, None) # Sets first new node
-        Old_node = self.first.succ #starting point for iteration
-        New_node = result.first # startin point for iteration
 
-        #goes through the old list and adds a new node to the new list
-        for x in self:
-            #If its not the end of the list
-            if Old_node != None:
-                New_node.succ = result.Node(x,None)
+        if self.first is None:
+            return result
+        
+        else:
+            result.first = result.Node(self.first.data, None) # Sets first new node
+            Old_node = self.first.succ #starting point for iteration
+            New_node = result.first # startin point for iteration
 
-                #Next node
-                Old_node = Old_node.succ
-                New_node = New_node.succ
+            #goes through the old list and adds a new node to the new list
 
-        return result
+            while Old_node != None:
+                    New_node.succ = result.Node(Old_node.data,None)
+
+                    #Next node
+                    Old_node = Old_node.succ
+                    New_node = New_node.succ
+
+            return result
     ''' Complexity for this implementation:
         O(n), goes through all the elements one time. We dont really need insert because we already know
         that the linkedlist is sorted from when it was created.

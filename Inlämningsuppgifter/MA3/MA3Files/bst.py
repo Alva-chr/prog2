@@ -1,9 +1,9 @@
 """ bst.py
 
-Student:
-Mail:
-Reviewed by:
-Date reviewed:
+Student: Alva Christensson
+Mail: Alvachristensson03@gmail.com
+Reviewed by: Yashaswi Sood
+Date reviewed: 2025-05-19
 """
 
 
@@ -117,9 +117,9 @@ class BST:
         if r is None:
             return None
         elif k < r.key:
-            return self._remove(r.left, k)
+            r.left = self._remove(r.left, k)
         elif k > r.key:
-            return self._remove(r.right, k)
+            r.right = self._remove(r.right, k)
         
         else:  # This is the key to be removed
             if r.left is None:     # Easy case

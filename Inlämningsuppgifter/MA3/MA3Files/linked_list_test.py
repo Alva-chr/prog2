@@ -91,6 +91,7 @@ class Test(unittest.TestCase):
         self.assertNotEqual(lst, cpy) #Not a new LinkedList object
         orig_node = lst.first
         copy_node = cpy.first
+        
         while orig_node and copy_node:
             self.assertNotEqual(orig_node, copy_node) #Shared nodes
             self.assertEqual(orig_node.data, copy_node.data) #Not the same data
